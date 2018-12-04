@@ -10,3 +10,14 @@ str(cash)
 
 cash[3,2]
 cash[5,"year"]
+
+
+# moving money backwards
+cash_flow <- 100
+interest <- 10
+periods <- 2
+
+present_value <- cash_flow * (1 + interest /100) ^ - periods
+print(present_value)
+
+
