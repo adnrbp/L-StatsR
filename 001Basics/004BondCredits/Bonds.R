@@ -24,6 +24,45 @@ plot(AAA_factor)
 
 
 
+#no order specified in bars
+#order least risky to most risky
+#AAA, AA, A, BBB, BB, B, CCC, CC, C, D
+#2 ways: 1. while create, 2. existing unordered
+
+
+credit_factor_ordered <- factor(credit_rating, ordered = TRUE, 
+                                levels = c("AAA", "AA", "A", "BBB"))
+
+ordered(credit_factor, levels = c("AAA", "AA", "A", "BBB"))
+
+
+#identify levels:
+unique(credit_rating2)
+#credit_factor_ordered <- factor(credit_rating2, ordered = TRUE, levels = c("AAA","AA","A","BBB","BB","B","CCC","CC", "C", "D"))
+credit_factor_ordered <- factor(credit_rating2, ordered = TRUE, levels = c("AAA","AA","BB","B","CCC"))
+plot(credit_factor_ordered)
+
+
+
+#delete 2 values:
+keep_level <- credit_factor2[c(-3 ,-7)]
+plot(keep_level)
+drop_level <-credit_factor2[c(-3,-7),drop=TRUE]
+plot(drop_level)
+
+
+#avoid convert characters into factors with "stringsAsFactors"
+credit_rating <- c("AAA", "A", "BB")
+bond_owners <- c("Dan", "Tom", "Joe")
+
+bonds <-data.frame(credit_rating,bond_owners,stringsAsFactors = FALSE)
+str(bonds)
+
+bonds$credit_factor <- factor(bonds$credit_rating, ordered = TRUE, levels = c("AAA","A","BB"))
+str(bonds)
+
+
+
 
 
 
