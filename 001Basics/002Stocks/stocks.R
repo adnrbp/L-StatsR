@@ -99,3 +99,23 @@ rbind_stocks <- rbind(apple,ibm,micr)
 #relationship between apple and microsoft stock prices
 plot(cbind(apple,micr))
 
+
+
+#portfolio with lists
+name <- "Apple and IBM"
+apple <- c(109.49, 109.90, 109.11, 109.95, 111.03)
+ibm <- c(159.82, 160.02, 159.84, 160.35, 164.79)
+cor_matrix <- cor(cbind(apple, ibm))
+
+portfolio <- list(name,apple,ibm,cor_matrix)
+
+#name to de elements of the portfolio list:
+names(portfolio) <- c("portfolio_name", "apple", "ibm", "correlation")
+
+#look at stocks of the portfolio list:
+portfolio[c(2,3)]
+#inspect the correlation stored:
+portfolio$correlation
+
+
+
