@@ -118,4 +118,7 @@ portfolio[c(2,3)]
 portfolio$correlation
 
 
+#weight of each stock in portfolio
+portfolio$weight <- c(apple = .20, ibm = .80)
+
 
