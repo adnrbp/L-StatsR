@@ -12,9 +12,16 @@ stocks$ebay_buy <- stocks$ebay < 18
 print(stocks)
 
 #sell microsoft stocks if crosses above 61
-stocks$microsoft_buy <- stocks$microsoft > 61 
+stocks$microsoft_sell <- stocks$microsoft > 61 
+
+#define a range to buy microsoft stocks:
+stocks$microsoft_buy_range <- (stocks$microsoft > 60.5) & (stocks$microsoft < 61.5)
+
+stocks$good_dates <- (stocks$date > as.Date('2017-01-21')) & (stocks$date < as.Date('2017-08-25'))
 
 
+print(stocks)
 
 
+subset(stocks,(stocks$ebay < 18.30) & (stocks$microsoft > 60))
 
