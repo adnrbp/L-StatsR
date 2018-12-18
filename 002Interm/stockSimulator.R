@@ -76,3 +76,26 @@ while (debt > 0) {
   
   plot(x_axis, y_axis, xlim = c(0,10), ylim = c(0,5000))
 }
+
+
+#debt with limited cash to pay simulation
+debt <- 5000
+cash <- 4000
+
+while (debt > 0) {
+  debt <- debt - 500
+  cash <- cash - 500
+  print(paste("Debt remaining:", debt, "and Cash remaining:", cash))
+
+  if (cash == 0) {
+    print("You ran out of cash!")
+    break
+  }
+}
+
+
+
+
+
+
+
