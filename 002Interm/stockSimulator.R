@@ -50,3 +50,29 @@ while(stock_price <= 52.5 ) {
   print(stock_price)
 }
 print("Stock price is above 52.5! Sell!")
+
+
+
+
+
+
+#debt reduction over months with a plot
+debt <- 5000
+#counter
+i <- 0
+# plot data
+x_axis <- i
+y_axis <- debt
+
+plot(x_axis, y_axis, xlim = c(0,10), ylim = c(0,5000))
+
+while (debt > 0) {
+
+  debt <- debt - 500
+  i <- i + 1
+
+  x_axis <- c(x_axis, i)
+  y_axis <- c(y_axis, debt)
+  
+  plot(x_axis, y_axis, xlim = c(0,10), ylim = c(0,5000))
+}
