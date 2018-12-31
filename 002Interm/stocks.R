@@ -9,7 +9,7 @@ apple <- c(0.37446342,-0.71883530,0.76986527,0.98226467,0.98171665,1.63217981,-0
 ibm <- c(0.1251408,-0.1124859,0.3190691,2.7689429,0.3458948,0.7014998,-0.6125390,1.6858006,0.1307267,-0.2907839,-0.7677657,-0.0299886,0.5519558,-0.1610979,-0.1613578,-0.2095056,0.2579329,-0.5683858,0.2467056,-0.3661465)
 micr <- c(0.08445946,1.63713080,-0.44835603,2.36864053,-0.58660583,1.57351254,0.32273681,1.30287920,-0.47634170,-0.15954052,-0.44742729,2.11878010,-0.12574662,0.00000000,0.01573812,-0.48780488,0.06325111,-0.45828066,-0.14287982,-1.20826709)
 stock_return <- list(apple,ibm,micr)
-
+stock_return2 <-data.frame(apple,ibm,micr)
 
 percent_to_decimal <- function(percent, digits = 2) {
     decimal <- percent / 100
@@ -18,3 +18,14 @@ percent_to_decimal <- function(percent, digits = 2) {
 }
 
 lapply(stock_return, FUN = percent_to_decimal)
+
+lapply(stock_return2,FUN=mean)
+
+# Sharpe ratio
+sharpe <- function(returns) {
+    (mean(returns) - .0003) / sd(returns)
+}
+
+lapply(stock_return2,FUN=sharpe)
+
+
