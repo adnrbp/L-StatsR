@@ -21,11 +21,17 @@ lapply(stock_return, FUN = percent_to_decimal)
 
 lapply(stock_return2,FUN=mean)
 
-# Sharpe ratio
+# Sharpe ratio = [mean(returns) - risk free rate] / std(returns)
 sharpe <- function(returns) {
     (mean(returns) - .0003) / sd(returns)
 }
 
 lapply(stock_return2,FUN=sharpe)
 
+#with risk free rate
+sharpe2 <- function(returns, rf=.0003) {
+    (mean(returns) - rf) / sd(returns)
+}
 
+lapply(stock_return,FUN=sharpe, rf=.0004)
+lapply(stock_return,FUN=sharpe, rf=.0009)
