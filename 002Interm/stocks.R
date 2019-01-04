@@ -33,9 +33,11 @@ sharpe2 <- function(returns, rf=.0003) {
     (mean(returns) - rf) / sd(returns)
 }
 
+#list returned
 lapply(stock_return2,FUN=sharpe, rf=.0004)
 lapply(stock_return2,FUN=sharpe, rf=.0009)
 
+#numeric returned
 sapply(stock_return2,FUN=sharpe)
 #lapply equivalent
 sapply(stock_return2,FUN=sharpe,simplify=FALSE,USE.NAMES=FALSE)
